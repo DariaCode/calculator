@@ -1,0 +1,147 @@
+/* ----------------------------------------------------
+Stylesheet for www.dariacode.dev / calculator
+Updated: 02/19/2020
+Author: Daria Vodzinskaia
+Website: www.dariacode.dev
+-------------------------------------------------------  */
+
+
+/* reset and body*/
+/* This effectively causes every element on the page 
+to use the border-box box model and 
+also applies it to the before and after pseudo-elements.*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+body {
+    background: linear-gradient(180deg, #C6FEE1, #E0FCED);
+    font-family: Open Sans;
+    font-size: 16px;
+    padding: 15%;
+}
+
+.calculator {
+    background: linear-gradient(135deg, #39BEB9, #00837B);
+    width: 300px;
+    box-shadow: 0 10px 28px #00837B;
+    margin: 30px auto;
+    border-radius: 15px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    /* when setting top: 50%; left: 50% of the element, 
+    you are moving the top left corner of the element 
+    to the center of its parent. 
+    The center of the element, though, 
+    does not line up with the center of its parent*/
+    transform: translate(-50%, -50%);
+}
+#display {
+    background: #f6f7f6;
+    text-align: right;
+    padding: 15px 28px;
+    height: 20%;
+    color: #4c455a;
+    font-size: 29px;
+    position: relative;
+    overflow: hidden; // Content is clipped if necessary to fit the padding box
+    box-shadow: 0 2px 3px #00837B;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 4px;
+    #formula {
+        grid-row: 1 / 2;
+    }
+    #currentValue {
+       grid-row: 2 / 3; 
+    }
+}
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+
+    #clear {
+        grid-area: 1 / 1 / 2 / span 3;
+        background: #39BEB9;
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);;
+          }
+        &:active {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 150px;
+          }
+    }
+    #zero {
+        grid-area: 5 / 1 / 6 / span 2;
+    }
+    #divide, 
+    #subtract,
+    #add,
+    #equals {
+        background: rgba(0, 0, 0, 0.15);
+        font-size: 150%;
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);;
+          }
+        &:active {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 150px;
+          }
+    }
+    #multiply {
+        background: rgba(0, 0, 0, 0.15);
+        font-size: 100%;
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);;
+          }
+        &:active {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 150px;
+          }
+    }
+}
+
+button{
+    float: right;
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: 120%;
+    padding: 15px 10px;
+    outline: none;
+    text-shadow: 0 4px 3px rgba(0, 0, 0, 0.144);
+    &:hover {
+        background: rgba(255, 255, 255, 0.1);;
+      }
+    &:active {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 150px;
+      }
+}
+  footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    i{
+      padding: 0 15px 10px 15px;
+      font-size: 1.2em;
+      color: black;
+      &:hover{
+        color:#00837B;
+      }
+    }
+  }

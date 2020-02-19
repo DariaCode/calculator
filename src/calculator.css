@@ -1,0 +1,193 @@
+/* ----------------------------------------------------
+Stylesheet for www.dariacode.dev / calculator
+Updated: 02/19/2020
+Author: Daria Vodzinskaia
+Website: www.dariacode.dev
+-------------------------------------------------------  */
+/* reset and body*/
+/* This effectively causes every element on the page 
+to use the border-box box model and 
+also applies it to the before and after pseudo-elements.*/
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(#C6FEE1), to(#E0FCED));
+  background: linear-gradient(180deg, #C6FEE1, #E0FCED);
+  font-family: Open Sans;
+  font-size: 16px;
+  padding: 15%;
+}
+
+.calculator {
+  background: linear-gradient(135deg, #39BEB9, #00837B);
+  width: 300px;
+  -webkit-box-shadow: 0 10px 28px #00837B;
+          box-shadow: 0 10px 28px #00837B;
+  margin: 30px auto;
+  border-radius: 15px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  /* when setting top: 50%; left: 50% of the element, 
+    you are moving the top left corner of the element 
+    to the center of its parent. 
+    The center of the element, though, 
+    does not line up with the center of its parent*/
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#display {
+  background: #f6f7f6;
+  text-align: right;
+  padding: 15px 28px;
+  height: 20%;
+  color: #4c455a;
+  font-size: 29px;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-shadow: 0 2px 3px #00837B;
+          box-shadow: 0 2px 3px #00837B;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  grid-gap: 4px;
+}
+
+#display #formula {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+}
+
+#display #currentValue {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+}
+
+.buttons {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: (1fr)[5];
+      grid-template-rows: repeat(5, 1fr);
+}
+
+.buttons #clear {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: 1 / 1 / 2 / span 3;
+  background: #39BEB9;
+}
+
+.buttons #clear:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.buttons #clear:active {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 150px;
+}
+
+.buttons #zero {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: 5 / 1 / 6 / span 2;
+}
+
+.buttons #divide,
+.buttons #subtract,
+.buttons #add,
+.buttons #equals {
+  background: rgba(0, 0, 0, 0.15);
+  font-size: 150%;
+}
+
+.buttons #divide:hover,
+.buttons #subtract:hover,
+.buttons #add:hover,
+.buttons #equals:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.buttons #divide:active,
+.buttons #subtract:active,
+.buttons #add:active,
+.buttons #equals:active {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 150px;
+}
+
+.buttons #multiply {
+  background: rgba(0, 0, 0, 0.15);
+  font-size: 100%;
+}
+
+.buttons #multiply:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.buttons #multiply:active {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 150px;
+}
+
+button {
+  float: right;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 120%;
+  padding: 15px 10px;
+  outline: none;
+  text-shadow: 0 4px 3px rgba(0, 0, 0, 0.144);
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+button:active {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 150px;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: black;
+  text-align: center;
+  padding: 10px;
+}
+
+footer i {
+  padding: 0 15px 10px 15px;
+  font-size: 1.2em;
+  color: black;
+}
+
+footer i:hover {
+  color: #00837B;
+}
+/*# sourceMappingURL=calculator.css.map */
